@@ -7,7 +7,9 @@ const getErrorMsg = (errMsg: string): string => {
   return '';
 };
 
-const getErrStack = (errItem: string): { [x: string]: any } | undefined => {
+const getErrStack = (
+  errItem: string
+): { [x: string]: string | number } | undefined => {
   const regexp = /(https?:\/\/.*?):(\d+):(\d+)$/;
   const match = regexp.exec(errItem);
   if (match) {
@@ -19,9 +21,11 @@ const getErrStack = (errItem: string): { [x: string]: any } | undefined => {
   }
 };
 
-export const parseError = (errMsg: string): { [x: string]: any } => {
+export const parseError = (
+  errMsg: string
+): { [x: string]: string | { [x: string]: string | number }[] } => {
   const message = getErrorMsg(errMsg);
-  const errorStackArray = [];
+  const errorStackArray = [] as { [x: string]: string | number }[];
   const errorStack = errMsg.split('\n');
   if (errorStack) {
     errorStack.forEach((item) => {
