@@ -1,0 +1,49 @@
+{
+  "name": "leetcode-foundation",
+  "version": "1.0.0",
+  "description": "leet code hire example",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup --config rollup.config.js",
+    "lint": "eslint src --fix --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlixWang/leetcode-foundation.git"
+  },
+  "keywords": [
+    "leetcode",
+    "front-end"
+  ],
+  "author": "alixwang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlixWang/leetcode-foundation/issues"
+  },
+  "homepage": "https://github.com/AlixWang/leetcode-foundation#readme",
+  "dependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-typescript": "^7.10.4",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.2.2",
+    "prettier-eslint": "^11.0.0",
+    "prettier-eslint-cli": "^5.0.0",
+    "rollup": "^2.23.1",
+    "rollup-plugin-babel": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.9",
+    "eslint": "^7.6.0",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
+  }
+}
